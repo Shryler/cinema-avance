@@ -12,15 +12,12 @@
   <link rel="stylesheet" href="/src/assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- <div class="container p-0 pt-2">
-    <header class="ms-2 p-1 ">
-      <a href="/home" class="spa-link me-2">Home</a>
-      <a href="/contact" class="spa-link me-2">Contact</a>
-    </header> -->
-
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
         <div class="container">
           <img class="img-fluid pe-3" src="../favicon.png">
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -41,7 +38,7 @@
     </nav>
     
     
-    <div id="root" class="mt-5 mb-5"></div>
+    <div id="root" class="mt-5 mb-5 container"></div>
 <script type="module" src="/src/index.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"

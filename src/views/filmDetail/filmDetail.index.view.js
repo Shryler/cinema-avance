@@ -21,16 +21,17 @@ export class FilmDetailIndexView {
         year: "numeric",
         month: "long",
         day: "numeric",
+        weekday: "long",
       });
       return newDate;
     }
-    
+
     const sortedSeances = seances.sort((s1, s2) => s1.heure < s2.heure ? -1 : 1).sort((s1,s2) => s1.jour < s2.jour ? -1 : 1);
 
     const resaLinks = sortedSeances.map((seance) => {
       const date = dateConverter(seance.jour);
       return `
-        <a href="/reservation/${seance.id}" class="btn btn-danger mb-2 spa-link">Le ${date} à ${seance.heure}</a>
+        <a href="/reservation/${seance.id}" class="btn btn-danger mb-2 spa-link"> ${date} à ${seance.heure}</a>
         `;
     }).join('');
 
