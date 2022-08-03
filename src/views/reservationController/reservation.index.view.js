@@ -6,7 +6,6 @@ export class ReservationControllerView {
     }
 
     importCss = async () => {
-        const { seance } = this.models;
         const cssModule = await import('./reservation.index.view.css', {
             assert: { type: "css" },
         });
@@ -16,7 +15,7 @@ export class ReservationControllerView {
 
     async render() {
 
-        const { seance, film, newPriceDiv } = this.models;
+        const { seance, film } = this.models;
         const date = dateConverter(seance.jour);
 
         function dateConverter(date) {
@@ -46,7 +45,7 @@ export class ReservationControllerView {
                     <div class="input-group-text">
                         <i class="fa fa-address-card"></i>
                     </div>
-                    </div> 
+                    </div>
                     <input id="name" name="name" placeholder="Nom" type="text" class="form-control" required="required">
                 </div>
                 </div>
@@ -64,11 +63,11 @@ export class ReservationControllerView {
                 <option value="6">6</option>
                 </select>
                 </div>
-                ${newPriceDiv}
+                <span id="emPrice" class="mt-2"></span>
             </div> 
             <div class="form-group row">
                 <div class="col-12 mt-3">
-                <button name="submit" type="submit" class="btn btn-danger btn-sm w-100">Réserver</button>
+                <button id="btnResa" name="submit" type="submit" class="btn btn-danger btn-sm w-100">Réserver</button>
                 </div>
             </div>
             </form>
@@ -79,15 +78,28 @@ export class ReservationControllerView {
         const viewElement = document.createElement("div");
         viewElement.innerHTML = viewHtml;
 
-        const selectDiv = viewElement.querySelector("#selectDiv");
+        const selectDiv = viewElement.querySelector("#nbPlace");
+        const emPrice = viewElement.querySelector("#emPrice");
         selectDiv.addEventListener("change", (e) => {
-            console.log(e.target.value);
             const newPrice = seance.price * e.target.value;
-
-            const newPriceDiv = viewElement.createElement("div");
-            newPriceDiv.innerHTML = `<span class="mt-2">Prix unitaire : ${newPrice}€</span>`;
-            return newPriceDiv;
+            
+            emPrice.innerHTML = `<span class="mt-2">TOTAL : <strong>${newPrice},00 €</strong></span>`;
+            return emPrice;
         });
+        
+        const btnResa = viewElement.querySelector("#btnResa");
+        const inputName = viewElement.querySelector("#name");
+        btnResa.addEventListener("click", (e) => {
+            e.preventDefault();
+            let regexName = new RegExp(/^[^\d]+$/);
+            let testName = regexName.test(inputName.value);
+            if (testName == false || nbPlace.value == 0){
+                console.log("faux");
+                alert("Veuillez saisir votre nom correctement et/ou le nombre de place(s)")
+            } else {
+                console.log("OK ! ça marche");
+            }
+        })
 
         return viewElement;
     };

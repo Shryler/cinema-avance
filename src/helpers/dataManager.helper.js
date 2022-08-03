@@ -1,4 +1,4 @@
-import * as Models from "../models/index";
+import * as Models from "../models/index.js";
 
 export class DataManager {
   

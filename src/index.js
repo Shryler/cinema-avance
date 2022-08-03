@@ -1,7 +1,7 @@
 import { DataManager } from "./helpers/dataManager.helper.js";
 import { App } from "./app.js";
 
-// DataManager.initDataStorage();
+DataManager.initDataStorage();
 App.start();
 
 

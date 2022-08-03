@@ -1,4 +1,4 @@
-import * as Controllers from "./controllers/index";
+import * as Controllers from "./controllers/index.js";
 
 export class App {
 
