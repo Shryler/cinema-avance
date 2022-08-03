@@ -1,4 +1,4 @@
-import { DataManager } from '../helpers/dataManager.helper.js';
+import { DataManager } from '../helpers/dataManager.helper';
 
 export class FilmDetailController {
 

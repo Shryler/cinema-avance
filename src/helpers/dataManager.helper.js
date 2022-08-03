@@ -1,4 +1,4 @@
-import * as Models from "../models/index.js";
+import * as Models from "../models/index";
 
 export class DataManager {
   
@@ -72,6 +72,9 @@ export class DataManager {
     const allData = JSON.parse(localStorage.getItem("data-cinema"));
     const jsonDataTable = allData[tableName];
     let nextId = Math.max(...jsonDataTable.map((obj) => obj.id)) + 1;
+    if (jsonDataTable.length == 0){
+      nextId = 1;
+    }
     for(const model of modelsArray){
       model.id = nextId++;
       jsonDataTable.push(model);

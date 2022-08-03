@@ -1,3 +1,6 @@
+import { DataManager } from '../../helpers/dataManager.helper';
+import { Reservation } from '../../models/reservation.model';
+
 export class ReservationControllerView {
     models = null;
     constructor(models) {
@@ -97,9 +100,11 @@ export class ReservationControllerView {
                 console.log("faux");
                 alert("Veuillez saisir votre nom correctement et/ou le nombre de place(s)");
             } else {
-                console.log("OK ! ça marche");
+                const newResa = new Reservation({"customer": inputName.value, "nbPlace": nbPlace.value, "seance_id": seance.id,})
+                console.log("OK ! ça marche", newResa);
+                DataManager.insert(newResa);
             }
-        })
+        });
 
         return viewElement;
     };
