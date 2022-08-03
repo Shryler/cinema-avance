@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(25, 25, 25);
+}
+
+a {
+    text-decoration: none;
+    color:whitesmoke;
+}
+a:hover {
+    color:red;
+}
+
+.card-img-top {
+    max-width: 250px;
+    text-align: center;
+}
