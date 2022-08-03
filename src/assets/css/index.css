@@ -2,6 +2,10 @@ body{
     background-color: rgb(94 36 36);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 a {
     text-decoration: none;
     color: inherit !important;
@@ -23,14 +27,45 @@ header a:hover {
     text-align: center;
 }
 
+img {
+    text-align: center;
+}
+
 .card, .navbar {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 }
 
+h4 {
+    border:1px solid rgba(128, 128, 128, 0.2);
+    width:fit-content;
+    font-family: 'Kanit', sans-serif;
+    font-variant: small-caps;
+    margin: 10px auto;
+    padding:5px 25px;
+    min-height:130px;
+    display: flex;
+    align-items: center;
+}
+.horaires {
+    margin: 10px auto;
+    width: min-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .btn-danger {
     background-color: rgb(133, 51, 51) !important;
-    border-color: rgb(77, 30, 30) !important;
+    border-color: rgb(133, 51, 51) !important;
     color:rgb(238, 238, 238) !important;
     font-family: 'Kanit', sans-serif;
     font-variant: small-caps;
+}
+.btn-danger:hover {
+    transition:0.4s;
+    background-color:rgb(83, 26, 26) !important;
+}
+
+.flex-50 {
+    flex:50%;
 }

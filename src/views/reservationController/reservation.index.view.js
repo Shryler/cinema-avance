@@ -26,6 +26,7 @@ export class ReservationControllerView {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
+                weekday: "long",
             });
             return newDate;
         }

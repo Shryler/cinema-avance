@@ -21,18 +21,30 @@ export class FilmDetailIndexView {
         year: "numeric",
         month: "long",
         day: "numeric",
-        weekday: "long",
+        weekday: "short",
       });
       return newDate;
     }
 
     const sortedSeances = seances.sort((s1, s2) => s1.heure < s2.heure ? -1 : 1).sort((s1,s2) => s1.jour < s2.jour ? -1 : 1);
 
+    let memory = "2022-08-01";
+    
     const resaLinks = sortedSeances.map((seance) => {
       const date = dateConverter(seance.jour);
-      return `
-        <a href="/reservation/${seance.id}" class="btn btn-danger mb-2 spa-link"> ${date} à ${seance.heure}</a>
-        `;
+          if(memory !== seance.jour){
+            memory = seance.jour;
+            return `
+            <br>
+            </div>
+            <div class="horaires">
+            <h4>${date}</h4>
+            <a href="/reservation/${seance.id}" class="btn btn-danger mb-2 spa-link">${seance.heure}</a>
+            `
+          }
+          return `
+          <a href="/reservation/${seance.id}" class="btn btn-danger mb-2 spa-link">${seance.heure}</a>
+            `;
     }).join('');
 
     const viewHtml =  `
@@ -42,8 +54,11 @@ export class FilmDetailIndexView {
                 <h5 class="card-title">${film.title}</h5>
                 <p class="card-text">${film.synopsis}</p>
             </div>
-            <div class="card-body text-center w-100">
+            <div class="d-flex flex-wrap w-100">
+            <div class="horaires">
+            <h4>lundi 1 août 2022</h4>
             ${resaLinks}
+            </div>
             </div>
             </div>
         </div>
