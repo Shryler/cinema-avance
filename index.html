@@ -14,18 +14,34 @@
   <link rel="icon" type="image/png" href="../favicon.png" />
 </head>
 <body>
-  <div class="container-fluid p-0 pt-2">
+  <!-- <div class="container p-0 pt-2">
     <header class="ms-2 p-1 ">
       <a href="/home" class="spa-link me-2">Home</a>
       <a href="/contact" class="spa-link me-2">Contact</a>
-      <a href="/reservation" class="spa-link me-2">Résa</a>
-      <a href="/filmDetail" class="spa-link me-2">Détail</a>
-      <a href="/notExists" class="spa-link me-2">???</a>
-    </header>
+    </header> -->
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+          <img class="img-fluid pe-3" src="../favicon.png">
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link spa-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link spa-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
     
     <div id="root" class="mt-5 mb-5"></div>
-  </div>
-</div>
 <script type="module" src="/src/index.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"

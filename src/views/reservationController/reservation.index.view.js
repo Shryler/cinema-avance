@@ -31,7 +31,6 @@ export class ReservationControllerView {
         }
 
         const viewHtml = `
-        <br class="pt-5" >
         <div class="card m-auto" style="width: 25rem;">
         <div class="card-body text-center">
         <img src="${film.affiche}" class="card-img-top p-2 border" alt="${film.title}">
