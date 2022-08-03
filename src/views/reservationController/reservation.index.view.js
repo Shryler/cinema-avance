@@ -45,7 +45,7 @@ export class ReservationControllerView {
                     <div class="input-group-text">
                         <i class="fa fa-address-card"></i>
                     </div>
-                    </div>
+                    </div> 
                     <input id="name" name="name" placeholder="Nom" type="text" class="form-control" required="required">
                 </div>
                 </div>
@@ -95,7 +95,7 @@ export class ReservationControllerView {
             let testName = regexName.test(inputName.value);
             if (testName == false || nbPlace.value == 0){
                 console.log("faux");
-                alert("Veuillez saisir votre nom correctement et/ou le nombre de place(s)")
+                alert("Veuillez saisir votre nom correctement et/ou le nombre de place(s)");
             } else {
                 console.log("OK ! ça marche");
             }

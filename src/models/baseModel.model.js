@@ -1,4 +1,4 @@
-export class BaseModel{
+export class BaseModel {
 
     id = -1;
     isDeleted = false;
