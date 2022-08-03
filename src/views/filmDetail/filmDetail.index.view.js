@@ -35,7 +35,7 @@ export class FilmDetailIndexView {
     }).join('');
 
     const viewHtml =  `
-        <div class="card m-auto pt-2 d-flex flex-sm-row flex-wrap align-items-center container">
+        <div class="card m-auto p-2 d-flex flex-sm-row flex-wrap align-items-center container">
             <img src="${film.affiche}" class="card-img-top p-2 border w-50" alt="${film.title}">
             <div class="card-body text-center w-50">
                 <h5 class="card-title">${film.title}</h5>
