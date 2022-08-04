@@ -1,5 +1,4 @@
 import { DataManager } from '../helpers/dataManager.helper';
-// import { Reservation } from '../models/reservation.model';
 
 export class ReservationController {
 
@@ -11,7 +10,7 @@ export class ReservationController {
             location.href = '/error';
         }
 
-        const {ReservationControllerView} = await import('../views/reservationController/reservation.index.view.js');
+        const {ReservationControllerView} = await import('../views/reservation/reservation.index.view.js');
         const view = new ReservationControllerView({seance, film});
         return view.render();
     }
